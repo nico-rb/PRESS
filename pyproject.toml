@@ -1,7 +1,32 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
 [project]
 name = "press"
 version = "0.1.0"
-description = "Add your description here"
+description = "Pipeline for Reproducible End-to-end Serving System."
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "datasets>=5.0.0",
+    "pyyaml>=6.0.3",
+    "scikit-learn>=1.9.0",
+    "torch>=2.12.0",
+    "transformers>=5.12.0",
+]
+
+[tool.uv]
+package = false
+exclude-newer = "7 days"
+
+[dependency-groups]
+dev = [
+    "ipykernel==7.2.0",
+    "pytest==9.0.3",
+    "ruff==0.15.15",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

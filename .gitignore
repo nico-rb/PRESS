@@ -13,5 +13,9 @@ wheels/
 # Local setup
 *.code-workspace
 
+# Data
+/data/downloads/*
+*.parquet
+
 # Agents
 CLAUDE.md
