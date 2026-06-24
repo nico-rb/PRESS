@@ -12,6 +12,13 @@ from pathlib import Path
 
 import yaml
 
+# Shared domain constants. Per-experiment YAMLs override these via TrainingConfig;
+# serving and the default factory/dataset arguments use them directly.
+MODEL_NAME = "distilbert-base-uncased"
+NUM_LABELS = 4
+MAX_LENGTH = 128
+CLASS_NAMES = ["World", "Sports", "Business", "Sci/Tech"]
+
 
 @dataclass
 class TrainingConfig:

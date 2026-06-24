@@ -17,4 +17,4 @@ epochs: 1
 seed: 42
 
 # output
-output_dir: outputs/1-epoch
+output_dir: outputs/models/1_epoch

@@ -10,8 +10,7 @@ Why a factory:
 
 from transformers import AutoModelForSequenceClassification, PreTrainedModel
 
-MODEL_NAME = "distilbert-base-uncased"
-NUM_LABELS = 4
+from src.config import MODEL_NAME, NUM_LABELS
 
 
 def build_model(model_name: str = MODEL_NAME, num_labels: int = NUM_LABELS) -> PreTrainedModel:

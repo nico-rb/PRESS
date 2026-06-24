@@ -17,7 +17,7 @@ import torch
 from torch.utils.data import Dataset
 from transformers import PreTrainedTokenizerBase
 
-MAX_LENGTH = 128
+from src.config import MAX_LENGTH
 
 
 class AGNewsDataset(Dataset):

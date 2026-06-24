@@ -1,0 +1,19 @@
+# Keep the build context small: only src/, main.py and the trained model are needed.
+.venv/
+.git/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+
+data/
+notebooks/
+scripts/
+tests/
+configs/
+archived/
+outputs/figures/
+outputs/models/baseline/
+
+local.md
+*.code-workspace

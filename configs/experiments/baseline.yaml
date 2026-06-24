@@ -16,4 +16,4 @@ epochs: 3
 seed: 42
 
 # output
-output_dir: outputs/baseline
+output_dir: outputs/models/baseline

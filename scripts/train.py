@@ -1,7 +1,7 @@
 """Entrypoint: fine-tune DistilBERT on AG News from a YAML config.
 
 Usage (from the repo root):
-    uv run python train.py [configs/experiments/baseline.yaml]
+    uv run python -m scripts.train [configs/experiments/baseline.yaml]
 """
 
 import json
