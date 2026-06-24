@@ -17,8 +17,5 @@ wheels/
 /data/downloads/*
 *.parquet
 
-# Outputs (trained models + metrics)
-outputs/
-
 # Agents
 CLAUDE.md
