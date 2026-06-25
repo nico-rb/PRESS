@@ -30,7 +30,7 @@ containerized serving, and deployment on Azure.
 | Concern | Tool |
 | --- | --- |
 | Modeling | PyTorch, HuggingFace `transformers` + `datasets` |
-| Training | Config-driven (dataclass + YAML), CPU-only |
+| Training | Config-driven (dataclass + YAML), GPU if available else CPU |
 | Experiment tracking | MLflow |
 | Serving | FastAPI + Docker |
 | Cloud storage | Azure Blob Storage |

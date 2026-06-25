@@ -5,11 +5,13 @@ FROM python:3.12-slim
 
 WORKDIR /app
 
-# CPU-only PyTorch + the serving stack. On Linux the default torch wheel bundles
-# CUDA (gigabytes); we serve on CPU, so install the CPU build from PyTorch's index.
-# pyyaml is needed because main.py -> src.config imports it.
-RUN pip install --no-cache-dir torch --index-url https://download.pytorch.org/whl/cpu \
- && pip install --no-cache-dir transformers fastapi uvicorn pyyaml
+# PyTorch + the serving stack. We install the default torch wheel, which on Linux
+# bundles CUDA, so the container uses a GPU when one is exposed to it
+# (`docker run --gpus all` on a host with NVIDIA drivers). main.py auto-detects the
+# device, so with no GPU the same image falls back to CPU. The wheel is several GB
+# because of the bundled CUDA libraries. pyyaml is needed because main.py ->
+# src.config imports it.
+RUN pip install --no-cache-dir torch transformers fastapi uvicorn pyyaml
 
 # Bake the tokenizer + base DistilBERT into the image's HuggingFace cache, so the
 # container needs no network at runtime (our trained weights override these later).

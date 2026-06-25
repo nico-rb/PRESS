@@ -13,6 +13,7 @@ wheels/
 # Local setup
 *.code-workspace
 archived/
+local.md
 
 # Data
 /data/downloads/*
