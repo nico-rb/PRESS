@@ -9,6 +9,7 @@ description = "Pipeline for Reproducible End-to-end Serving System."
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "azure-storage-blob>=12.30.0",
     "datasets>=5.0.0",
     "fastapi>=0.137.1",
     "pyyaml>=6.0.3",
